@@ -1,0 +1,57 @@
+*{
+    box-sizing: border-box;
+}
+
+.borderDiv{
+    background: linear-gradient( to right, #7fd10a, #eaff2d) ;
+    padding: 3px;
+    border-radius: 7px;
+    max-width: 300px;
+    margin: 20px 0;
+    margin: 80px auto 0 auto;
+}
+
+
+.borderDiv form{
+    
+    background-color: #0e0719;
+    padding: 10px 25px;
+    border-radius: 4px;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.container input{
+    width: 100%;
+}
+
+
+
+.container button{
+    margin: 20px auto;
+    background: linear-gradient( to right, #7fd10a, #eaff2d);
+    width: 90px ;
+    height: 30px ;
+    font-weight: 400;
+    border-radius: 4px;
+    border: 2px solid black;
+}
+
+.container label,  .container span{
+    color:white;
+
+}
+
+.container span{
+    font-size: 14px;
+}
+
+containerImg{
+    max-width: 100%;
+}

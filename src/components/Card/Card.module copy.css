@@ -1,0 +1,220 @@
+
+.cardHead{
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: rgb(42 70 71);
+    width: 250px;
+    height: 65px;
+}
+
+.cardHeader{
+    width: 100%;
+    background-color:rgb(8 22 23);
+    margin-top: 10px;
+    height: 24px;
+    border-bottom: 2px solid rgb(59 120 112);
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.closeButton{
+    position: absolute;
+    bottom:-2%;
+    height: 20px;
+    width: 20px;
+    border:0px;
+    border-radius: 15px;
+    background-color: red;
+    padding: 3px;
+    margin: 0;
+    text-align: center;;
+    z-index: 3;
+}
+
+.favoriteButton{
+    position: absolute;
+    bottom:-2%;
+    height: 50px;
+    width: 50px;
+    border:0px;
+    border-radius: 15px;
+    background-color: red;
+    padding: 3px;
+    margin: 0;
+    text-align: center;;
+    z-index: 3;
+}
+
+.container{
+    max-width: 250px;
+    max-height: 400px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.container:hover{
+    box-shadow: 0px 0px 60px 10px rgba(217,224,25,0.5);
+}
+
+.container::before{
+    content:"";
+    position:absolute;
+    top:0;
+    box-sizing: border-box;
+    width: 98%;
+    height: 80%;
+    z-index: -1;
+    border-left:2px solid rgba(235, 241, 139, 0.863);
+    border-right: 2px solid rgba(235, 241, 139, 0.863);
+    box-shadow: inset 0px 0px 60px 17px rgba(217,224,25,0.5);
+    animation-name: laboratorioContainer;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    animation-duration: 3s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-fill-mode:both;
+} 
+
+@keyframes laboratorioContainer{
+    from{
+        /* box-shadow: 0px 0px 48px 17px rgb(89 207 97 / 9%); */
+        background-color: rgb(89 207 97 / 15%);
+    }
+
+    to{
+        /* box-shadow: 0px 0px 48px 17px rgb(89 207 97 / 30%); */
+        background-color: rgb(89 207 97 / 35%);
+    }
+ 
+}
+
+
+
+
+/* .container{
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: rgb(42 70 71);
+    max-width: 250px;
+    max-height: 400px;
+    position: relative;
+} */
+
+.details{
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    justify-content: space-between;
+    background-color: rgb(30 49 45);
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.details div{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+}
+
+
+.icon{
+    color:aliceblue;
+    width: 100%;
+    height: 100%;
+}
+.img{
+    
+    width: 98%;
+    position:relative;
+    margin-bottom: -4px;
+}
+
+
+img{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+    z-index: -20;
+    
+    
+}
+
+/* .img::after{
+content: "";
+box-sizing: border-box;
+   position:absolute;
+   top:0;
+   left:0;
+   width: 100%;
+   height: 100%;
+   box-shadow: inset 0px 0px 32px 0px rgba(58,217,44,1);
+   box-shadow: inset 0px 0px 300px 7px rgba(58,217,44,1);
+   box-shadow: inset 0px 0px 300px 7px rgba(58,217,44,0.65);
+} */
+
+.light{
+    display: block;
+    background-color: rgb(252 253 166);
+    width:10px;
+    height: 10px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 45px 1px rgba(217,224,25,1);
+    margin:0px 5px;
+    margin-top:-5px;
+}
+
+/* .lightMain{
+    display: block;
+    background-color: rgb(252 253 166);
+    width:60px;
+    height: 10px;
+    margin: 0px auto;
+    border-radius: 15px;
+    box-shadow: 0px 0px 48px 2px rgba(217,224,25,1);
+} */
+
+
+.name{
+    margin:0 auto;
+    font-size: 18px;
+    background-color: white;
+    width: 60%;
+    color:rgb(42 70 71);
+    border: 2px solid black;
+    margin-top: -8px;
+}
+
+.footer{
+    box-sizing: border-box;
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: rgb(21, 33, 34);
+    padding: 10px;
+}
+
+.footer h3{
+    margin:0;
+    margin-bottom: 2px;
+    font-size: 10px;
+   color:rgb(77, 132, 134);
+}
+
+.footer p{
+    margin:0;
+    color: rgb(207, 207, 207);
+    text-transform: uppercase;
+    font-size: 12px;    
+    text-align: left;
+    font-weight: 600;
+    margin-bottom: 1px;
+}

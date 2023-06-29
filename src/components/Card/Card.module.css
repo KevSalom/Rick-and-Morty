@@ -1,0 +1,61 @@
+:root{
+    --border-color: linear-gradient( to right, blue, red) ;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.borderDiv{
+    background: linear-gradient( to right, #7fd10a, #eaff2d) ;
+    padding: 3px;
+    border-radius: 7px;
+    height: 400px;
+    max-width: 250px;
+    margin: 20px 0;
+    
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100%;
+    padding: 4px;
+    background-color: #000;
+    border-radius: 7px;
+    
+}
+
+img{
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+.name{
+    font-size: 1.05rem;
+    color:white;
+
+}
+
+.species{
+    font-size: 0.9rem;
+    font-weight: 500;
+    color:white;
+}
+
+.info{
+    text-align: center;
+}
+
+.buttomBox{
+    display: flex;
+    justify-content: center;
+    gap:5px;
+}
+
+.buttomBox button{
+    width: 30px;
+    height: 30px;
+    margin-bottom: 10px;
+}
