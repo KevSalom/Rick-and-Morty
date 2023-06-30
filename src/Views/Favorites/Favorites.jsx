@@ -7,14 +7,11 @@ import { useState } from "react";
 import style from "./Favorite.module.css"
 
 export default function Favorites() {
-  const [aux, setAux] = useState(false);
   const favorites = useSelector((state) => state.myFavorites);
   const dispatch = useDispatch();
 
   const handleOrder = (ev) => {
     dispatch(orderCards(ev.target.value));
-    setAux(true)
-    
   };
   const handleFilter = (ev) => {
     dispatch(filterCards(ev.target.value));
@@ -22,10 +19,12 @@ export default function Favorites() {
   return (
     <>
       <select name="ORDER" id="" onChange={handleOrder}>
+        <option value="">Order</option>
         <option value="A">Ascendente</option>
         <option value="D">Descendente</option>
       </select>
       <select name="FILTER" id="" onChange={handleFilter}>
+        <option value="">Filter</option>
         <option value="Male">Male</option>
         <option value="Female">Female</option>
         <option value="Genderless">Genderless</option>

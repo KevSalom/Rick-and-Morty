@@ -8,7 +8,7 @@ import { addFav, removeFav } from "../../redux/action";
 
 export default function Card(props) {
   const [isFav, setIsFav] = useState(false);
-  const fav = useSelector((state) => state.myFavorites);
+  const fav = useSelector((state) => state.allCharacters);
   const dispatch = useDispatch();
   const location = useLocation();
   console.log(location);
