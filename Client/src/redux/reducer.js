@@ -1,42 +1,40 @@
-import { ADD_FAV, REMOVE_FAV, FILTER, ORDER } from "./action";
+import { ADD_FAV, REMOVE_FAV, FILTER, ORDER, CLEAN } from "./action";
 const initialState = {
   myFavorites: [],
-  allCharacters: []
+  allCharacters: [],
 };
 
 export const favoriteReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_FAV:
-      const allCharacters = [...state.allCharacters, action.payload];
-      return { myFavorites: allCharacters, allCharacters:allCharacters  };
+      return { myFavorites: action.payload, allCharacters: action.payload };
     case REMOVE_FAV:
-      const favFilterId = state.myFavorites.filter(
-        (el) => el.id !== action.payload.id);
-      const  allFilterId =  state.allCharacters.filter(
-        (el) => el.id !== action.payload.id);
-      return { myFavorites:favFilterId, allCharacters:allFilterId };
+      const newFav = state.myFavorites.filter(
+        (ch) => ch.id !== action.payload.idDel
+      );
+      return {
+        myFavorites: newFav,
+        allCharacters: action.payload.allCharacter,
+      };
     case FILTER:
       const genderGharacters = state.allCharacters.filter(
-        (el) => el.gender === action.payload);
-        return {...state, myFavorites:genderGharacters };
+        (el) => el.gender === action.payload
+      );
+      return { ...state, myFavorites: genderGharacters };
     case ORDER:
-      // const sortCharacters = state.allCharacters;
-
-      //   if(action.payload === "A"){
-      //     sortCharacters.sort(
-      //       (a,b)=>a.id - b.id);
-      //   } else if (action.payload === "D" ) {
-      //     sortCharacters.sort(
-      //       (a,b)=> b.id - a.id);
-      //   }
-      // return {...state, myFavorites:sortCharacters };
       return {
         ...state,
-        myFavorites: state.allCharacters.sort((a,b) => action.payload === 'A' ? a.id - b.id : b.id - a.id),
-        allCharacters: [...state.allCharacters]
-            }
+        myFavorites: state.myFavorites.sort((a, b) =>
+          action.payload === "A" ? a.id - b.id : b.id - a.id
+        ),
+        allCharacters: [...state.allCharacters],
+      };
+    case CLEAN:
+      return {
+        ...state,
+        myFavorites: [...state.allCharacters],
+      };
     default:
       return { ...state };
   }
 };
-

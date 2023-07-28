@@ -22,8 +22,7 @@ export default function Form(props) {
 
 
     function validation(userData, errors, setErrors, element) {
-  
-
+        
         if (element === 'email') {
             if (!userData.email) {
                 setErrors({ ...errors, email: 'Este campo no puede esta vacío' })

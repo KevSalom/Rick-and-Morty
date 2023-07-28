@@ -8,10 +8,9 @@ import { addFav, removeFav } from "../../redux/action";
 
 export default function Card(props) {
   const [isFav, setIsFav] = useState(false);
-  const fav = useSelector((state) => state.allCharacters);
+  const allCharacters = useSelector((state) => state.allCharacters);
   const dispatch = useDispatch();
   const location = useLocation();
-  console.log(location);
 
   function newOnClose() {
     props.onClose(props.id);
@@ -28,12 +27,12 @@ export default function Card(props) {
   }
 
   useEffect(() => {
-    fav.forEach((fv) => {
+    allCharacters.some((fv) => {
       if (fv.id === props.id) {
         setIsFav(true);
       }
     });
-  }, [fav]);
+  }, [allCharacters]);
 
   return (
     <div className={style.borderDiv}>

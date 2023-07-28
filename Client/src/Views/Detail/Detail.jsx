@@ -8,9 +8,6 @@ export default function About() {
 const {id}= useParams();
 const [character, setCharacter] = useState({});
 
-console.log(character)
-
-
   useEffect(() => {
     axios(`http://localhost:3001/rickandmorty/character/${id}`).then(
       ({ data }) => {
