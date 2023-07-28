@@ -16,16 +16,18 @@ function App() {
   const navigate = useNavigate();
 
   async function login(userData) {
+    
     const URL = "http://localhost:3001/rickandmorty/login";
     const { email, password } = userData;
     try {
       const reqLogin = await axios(
         `${URL}?email=${email}&password=${password}`
       );
-
-      if (reqLogin.access) {
+  
+      if (reqLogin.data) {
         setAccess(true);
         navigate("/home");
+        
       }
     } catch (error) {
       window.alert('Datos inválidos, por favor verifica');
