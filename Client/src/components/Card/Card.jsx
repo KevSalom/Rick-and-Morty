@@ -22,6 +22,7 @@ export default function Card(props) {
       dispatch(removeFav(props));
     } else if (isFav === false) {
       setIsFav(true);
+      console.log(props.species)
       dispatch(addFav(props));
     }
   }

@@ -7,11 +7,10 @@
 }
 
 .borderDiv{
-    background: linear-gradient( to right, #7fd10a, #eaff2d) ;
+    background: linear-gradient( to right, #2ecb22, #eaff2d) ;
     padding: 3px;
     border-radius: 7px;
     height: 400px;
-    max-width: 250px;
     margin: 20px 0;
     
 }

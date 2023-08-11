@@ -1,0 +1,139 @@
+:root{
+    --white: #fff;
+    --grey: #e5e5e5;
+    --black: #0e0e0e;
+    --green:#2ecb22;
+  }
+
+
+
+
+.navigation{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background-color: var(--green);
+    border-left: 10px solid var(--green);
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+
+.navigation ul{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+}
+
+.navigation ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+}
+
+.navigation.active{
+    width: 80px;
+}
+
+.navigation ul li a.active{
+    background: var(--black);
+    color: var(--green);
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.navigation ul li:nth-child(1){
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+
+.navigation ul li a{
+    position: relative;
+    color: var(--black);
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+}
+
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 70px;
+    text-align: center;
+}
+
+.navigation ul li a .icon ion-icon{
+    font-size: 1.75em;
+        
+    position: relative;
+    z-index: 1000;
+
+}
+
+.navigation ul li a .title{
+    position: relative;
+    display: block;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 10px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+
+
+/* curve outside */
+
+.navigation ul li a.active::before{
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50px;
+    box-shadow: 35px 35px 0 10px var(--black);
+}
+
+.navigation ul li a.active::after{
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background:transparent;
+    border-radius: 50px;
+    box-shadow: 35px -35px 0 10px var(--black);
+}
+
+
+/*Responsive Desing*/
+@media (max-width: 991px){
+    .navigation{
+        left: -300px;
+    }
+
+    .navigation.active{
+        left: 0;
+        width: 300px;
+    }
+}
+
+@media (max-width: 480px){
+
+    .navigation{
+        left:-100%;
+        width: 100%;
+        z-index: 1000;
+    }
+    .navigation.active{
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+}

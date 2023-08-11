@@ -8,12 +8,26 @@ import About from "./Views/About/About";
 import Detail from "./Views/Detail/Detail";
 import Form from "./components/Form/Form";
 import Favorites from "./Views/Favorites/Favorites";
+import TopBar from "./components/TopBar/TopBar";
 
 function App() {
   const [characters, setCharacters] = useState([]);
   const [access, setAccess] = useState(true);
+  const [toggle, setToggle] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  
+
+
+
+  //Logica de estilos
+  const handleToggle = () =>{
+    (!toggle)?setToggle(true):setToggle(false)
+    }
+  
+
+
+  //Logica de la Aplicación
 
   async function login(userData) {
     
@@ -68,18 +82,26 @@ function App() {
   return (
     <div className="App">
       {location.pathname !== "/" ? (
-        <Nav onSearch={onSearch} logout={logOut} />
+        <Nav  logout={logOut} toggleState={toggle}/>
       ) : undefined}
+
+      <div className={(toggle)? 'main active' : 'main'}>
+
+      {location.pathname !== "/" ? (
+        <TopBar toggle={toggle} handleToggle={handleToggle} />
+      ) : undefined}
+        
       <Routes>
         <Route path="/" element={<Form login={login} />} />
         <Route
           path="/home"
-          element={<Cards characters={characters} onClose={onClose} />}
+          element={<Cards characters={characters} onClose={onClose} onSearch={onSearch} />}
         />
         <Route path="/about" element={<About />} />
         <Route path="/detail/:id" element={<Detail />} />
         <Route path="/favorites" element={<Favorites />} />
       </Routes>
+      </div>
     </div>
   );
 }

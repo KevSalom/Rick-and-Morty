@@ -1,9 +1,42 @@
-.container{
-    margin: 50px auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    max-width: 100%;
-    gap:20px;
+:root{
+    --white: #fff;
+    --grey: #e5e5e5;
+    --black: #0e0e0e;
+    --green:#2ecb22;
+    --gray1:#1b1d21;
+    --gray2:#222222;
+    --grayLetter: #dfe2eb;
+  }
+  
+
+.CardsContainer{
+    position:relative;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 80%;
+    min-height: calc(100vh - 60px);
+    transition: 0.5s;
+    background-color: var(--gray2);
+    margin:0 auto;
+  }
+
+.FavContainer{
     
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 100%;
+    gap:30px;
+    transition: 2s;
+}
+
+.NavFilters{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+select, button{
+  height: 40px;
 }

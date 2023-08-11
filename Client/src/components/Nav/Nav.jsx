@@ -1,14 +1,56 @@
-import SearchBar from "../SearchBar/SearchBar";
-import { NavLink } from "react-router-dom";
+import "./Nav.css";
+import { NavLink, Link } from "react-router-dom";
 
-export default function Nav(props) {
+export default function Nav({toggleState, logout}) {
+
   return (
-    <div>
-      <NavLink to="/about"><button>About</button></NavLink>
-      <NavLink to="/home"><button>Home</button></NavLink>
-      <NavLink to="/favorites"><button>Favorites Cards</button></NavLink>
-      <SearchBar onSearch={props.onSearch} />
-      <button onClick={props.logout}>Log Out</button>
-    </div>
+    <>
+      <div className={(toggleState)? 'navigation active' : 'navigation'}>
+        <ul>
+          <li>
+            <a href="index.html">
+              <span className="icon">
+                <ion-icon name="logo-apple"></ion-icon>
+              </span>
+              <span className="title">Brand Name</span>
+            </a>
+          </li>
+          <li>
+          <NavLink to='/home'>
+              <span className="icon">
+                <ion-icon name="home-outline"></ion-icon>
+              </span>
+              <span className="title">Home</span>
+              </NavLink>
+          </li>
+          <li>
+            <NavLink to='/favorites'>
+              <span className="icon">
+                <ion-icon name="heart-outline"></ion-icon>
+              </span>
+              <span className="title">Favorites</span>
+            </NavLink>
+          </li>
+          <li>
+          <NavLink to='/about'>
+              <span className="icon">
+                <ion-icon name="tennisball-outline"></ion-icon>
+              </span>
+              <span className="title">About me</span>
+          </NavLink>
+          </li>
+          <li>
+            <Link onClick={logout}>
+              <span className="icon">
+                <ion-icon name="log-out-outline"></ion-icon>
+              </span>
+              <span className="title">Log out</span>
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </>
   );
 }
+
+

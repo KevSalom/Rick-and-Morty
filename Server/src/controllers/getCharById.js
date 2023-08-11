@@ -13,10 +13,10 @@ try {
     id: data.id,
     name: data.name,
     gender: data.gender,
-    origin: data.origin,
+    origin: data.origin.name,
     image: data.image,
     status: data.status,
-    sprecies: data.sprecies,
+    species: data.species,
   }
 
   return res.status(200).json(character)
